@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Dropdown Generator - Excelのような表形式のプルダウンメニュー</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./script/markdown-dropdown-core.js"></script>
+  <script src="./script/markdown-dropdown-header.js"></script>
+  <script src="./script/markdown-dropdown-table.js"></script>
+  <script src="./script/markdown-dropdown-export.js"></script>
+  <script>
+    // DOMが読み込まれたらHTMLコンテンツを読み込む
+    document.addEventListener('DOMContentLoaded', function() {
+      // コンテンツを読み込む
+      fetch('./html/markdown-dropdown-content.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('app-content').innerHTML = html;
+          
+          // イベントリスナーを再設定するため、イベントを発火
+          const event = new Event('contentLoaded');
+          document.dispatchEvent(event);
+        })
+        .catch(error => {
+          console.error('コンテンツの読み込みに失敗しました:', error);
+          document.getElementById('app-content').innerHTML = '<p>エラー: コンテンツを読み込めませんでした。</p>';
+        });
+    });
+  </script>
+</head>
+<body>
+  <div id="app-content">
+    <!-- ここにHTMLコンテンツが読み込まれます -->
+    <p>読み込み中...</p>
+  </div>
+</body>
+</html> 
