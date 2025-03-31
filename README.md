@@ -1,6 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-blue.svg)](https://www.javascript.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fbd0c621-9ac0-427b-883d-5d8cb0fe1ea7/deploy-status)](https://app.netlify.com/sites/2f0833e717-markdown-dropdown/deploys)
 
 # Markdown Dropdown Generator
 
