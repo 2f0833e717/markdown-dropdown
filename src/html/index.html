@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Dropdown Generator - Excelのような表形式のプルダウンメニュー</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../script/markdown-dropdown-core.js"></script>
+  <script src="../script/markdown-dropdown-header.js"></script>
+  <script src="../script/markdown-dropdown-table.js"></script>
+  <script src="../script/markdown-dropdown-export.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Markdown Dropdown Generator</h1>
+    
+    <div class="description">
+      <p>このツールを使用して、Markdownドキュメントで使用できるドロップダウンメニュー付きテーブルを簡単に作成できます。行数と列数を指定し、ヘッダーとプルダウンの選択肢をカスタマイズして、HTMLコードを生成します。</p>
+    </div>
+    
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>Markdownドロップダウンメニュー</h3>
+        <p>Markdownでは標準的なドロップダウンメニューを実装することが難しいですが、このツールを使用してHTMLコードを生成し、Markdownドキュメントに埋め込むことができます。GitHub FlavoredマークダウンなどのHTML対応Markdownレンダラーで正しく表示されます。</p>
+      </div>
+      <div class="feature-item">
+        <h3>Excelのような表形式</h3>
+        <p>表の各セルにプルダウンメニューを配置し、Excelのようなスプレッドシート形式でデータを編集・表示できます。行ヘッダーや列ヘッダーのカスタマイズも可能で、各列ごとに異なるプルダウンの選択肢を設定できます。</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>表の設定</h3>
+      <div style="margin-bottom: 10px;">
+        <div>行数: <input type="number" id="rows" value="3" min="1" max="20"></div>
+        <div>列数: <input type="number" id="cols" value="3" min="1" max="20"></div>
+        <div style="margin-top: 10px;">
+          <label>
+            <input type="checkbox" id="show-column-headers">
+            列ヘッダーを設定する
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" id="show-row-headers">
+            行ヘッダーを設定する
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div id="header-settings" style="display: none;" class="section">
+      <div id="column-headers" style="display: none; margin-bottom: 15px;"></div>
+      <div id="row-headers" style="display: none;"></div>
+    </div>
+
+    <button id="generate-table-btn">表を生成</button>
+
+    <div id="result" style="margin-top: 20px;"></div>
+
+    <div style="margin-top: 20px;">
+      <button id="toggle-code">HTMLコードを表示</button>
+      <button id="dropdown-button">選択状態を反映したプルダウン付き表のHTMLコードを表示</button>
+    </div>
+
+    <div id="code-container" style="display: none;" class="code-container">
+      <h4>HTML コード:</h4>
+      <pre id="markdown-code"></pre>
+    </div>
+
+    <div id="dropdown-export-container" style="display: none;" class="code-container">
+      <h4>選択状態を反映したプルダウン付き表のHTMLコード:</h4>
+      <pre id="dropdown-export-data"></pre>
+    </div>
+  </div>
+</body>
+</html>
