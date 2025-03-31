@@ -8,6 +8,8 @@
 ## プロジェクト概要
 このプロジェクトは、Markdownドキュメントで使用できるドロップダウンメニュー付きテーブルを簡単に作成するためのWebツールです。Excelのような表形式でプルダウンメニューを設定し、行と列のサイズを指定し、ヘッダー設定やプルダウンの選択肢をカスタマイズして、HTMLコードを生成できます。
 
+- [デモページ](https://2f0833e717-markdown-dropdown.netlify.app/) 
+
 ![Markdown Dropdown Generator](docs/img/img01.png)
 
 ### Markdownドロップダウンメニュー
@@ -25,7 +27,7 @@ Markdownでは通常、標準的なドロップダウンメニューを実装す
 - 列ごとに異なるプルダウン選択肢の設定が可能
 
 ## 使い方
-1. `src/html/index.html`ファイルをブラウザで開きます
+1. `src/index.html`ファイルをブラウザで開くか、[デモページ](https://2f0833e717-markdown-dropdown.netlify.app/)にアクセスします
 2. 行数と列数を指定します
 3. 必要に応じて列ヘッダーと行ヘッダーの表示設定を行います
 4. ヘッダー名とプルダウンの選択肢を設定します
@@ -36,16 +38,47 @@ Markdownでは通常、標準的なドロップダウンメニューを実装す
 
 ![使用方法](docs/img/img02.png)
 
+## サンプル
+選択状態を反映したプルダウン付き表のHTMLコード:
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"></th>
+    <th style="border: 1px solid #ddd; padding: 8px;">列1</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">列2</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">列3</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"><b>行1</b></th>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"><b>行2</b></th>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"><b>行3</b></th>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+  </tr>
+</table>
+
+
 ## ファイル構成
 プロジェクトは以下のディレクトリ構造で整理されています：
 
 ```
 markdown-dropdown/
 ├── src/
+│   ├── index.html             # エントリーポイント
 │   ├── html/
-│   │   └── index.html    # メインHTMLファイル
+│   │   └── markdown-dropdown-content.html  # メインHTMLコンテンツ
 │   ├── css/
-│   │   └── style.css     # スタイルシート
+│   │   └── style.css          # スタイルシート
 │   └── script/
 │       ├── markdown-dropdown-core.js    # コア機能と初期化処理
 │       ├── markdown-dropdown-header.js  # ヘッダー設定関連の機能
@@ -55,13 +88,21 @@ markdown-dropdown/
 ```
 
 ## インストール
-特別なインストールは必要ありません。リポジトリをクローンまたはダウンロードして、`src/html/index.html`ファイルをブラウザで開くだけで使用できます。
+特別なインストールは必要ありません。リポジトリをクローンまたはダウンロードして、`src/index.html`ファイルをブラウザで開くだけで使用できます。
 
 ```bash
 git clone https://github.com/2f0833e717/markdown-dropdown.git
 cd markdown-dropdown
-# ブラウザでsrc/html/index.htmlを開く
+# ブラウザでsrc/index.htmlを開く
 ```
+
+## Netlifyへのデプロイ
+このプロジェクトはNetlifyに簡単にデプロイできます。デプロイ設定は以下の通りです：
+
+- **公開ディレクトリ**: `src`
+- **ビルドコマンド**: 不要（静的ファイルのみ）
+
+Netlifyでデプロイすると、`index.html`がエントリーポイントとなり、正しくコンテンツが表示されます。
 
 ## 制限事項
 - 生成されたHTMLコードは、GitHub FlavoredマークダウンやHTMLをサポートするMarkdownプロセッサでのみ正しく表示されます
@@ -69,7 +110,8 @@ cd markdown-dropdown
 
 ## 開発
 ソースコードの修正や機能追加を行う場合は、それぞれのディレクトリにあるファイルを編集してください：
-- HTMLの修正: `src/html/index.html`
+- エントリーポイントの修正: `src/index.html`
+- メインHTMLコンテンツの修正: `src/html/markdown-dropdown-content.html`
 - スタイルの変更: `src/css/style.css`
 - 機能の追加・変更: 
   - コア機能と初期化処理: `src/script/markdown-dropdown-core.js`

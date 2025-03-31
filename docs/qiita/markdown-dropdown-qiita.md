@@ -13,6 +13,35 @@ Markdownドキュメントでドロップダウンメニュー付きのテーブ
 
 ![Table](../img/img02.png)
 
+## サンプル
+選択状態を反映したプルダウン付き表のHTMLコード:
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"></th>
+    <th style="border: 1px solid #ddd; padding: 8px;">列1</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">列2</th>
+    <th style="border: 1px solid #ddd; padding: 8px;">列3</th>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"><b>行1</b></th>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"><b>行2</b></th>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+  </tr>
+  <tr>
+    <th style="border: 1px solid #ddd; padding: 8px;"><b>行3</b></th>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
+  </tr>
+</table>
+
 ## ツールの概要
 Markdown Dropdown Generatorは、以下の特徴を持つWebツールです：
 
