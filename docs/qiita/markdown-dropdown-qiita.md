@@ -1,49 +1,21 @@
 # Markdownでドロップダウンメニュー付きテーブルを作成するWebツールを作った話
 
 ## はじめに
-Markdownドキュメントでドロップダウンメニュー付きのテーブルを作成したいと思ったことはありませんか？GitHubのREADMEや技術文書で、インタラクティブな要素を含むテーブルを表示したい場合、Markdownの標準機能だけでは実現が難しいです。
+なんとなく、Markdownドキュメントでドロップダウンメニュー付きのテーブルを作成したいと思ったので、READMEや技術文書で、インタラクティブな要素を含むテーブルを表示できるMarkdown用HTML生成ツールを作った。
+※GithubやQiita、zenn等ではドロップダウンメニューは表示されない仕様らしい
 
-この記事では、そんな課題を解決するためのWebツール「Markdown Dropdown Generator」について解説します。
+この記事では、そんな課題を解決するためのWebツール「Markdown Dropdown Generator」について解説する。
 
 - [デモページ](https://2f0833e717-markdown-dropdown.netlify.app/) 
 
-![Markdown Dropdown Generator](../img/img01.png)
+![img01.png](https://github.com/2f0833e717/markdown-dropdown/raw/master/docs/img/img01.png)
 
 以下がMarkdownに貼り付けたHTMLコードのTable
 
-![Table](../img/img02.png)
-
-## サンプル
-選択状態を反映したプルダウン付き表のHTMLコード:
-<table style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <th style="border: 1px solid #ddd; padding: 8px;"></th>
-    <th style="border: 1px solid #ddd; padding: 8px;">列1</th>
-    <th style="border: 1px solid #ddd; padding: 8px;">列2</th>
-    <th style="border: 1px solid #ddd; padding: 8px;">列3</th>
-  </tr>
-  <tr>
-    <th style="border: 1px solid #ddd; padding: 8px;"><b>行1</b></th>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-  </tr>
-  <tr>
-    <th style="border: 1px solid #ddd; padding: 8px;"><b>行2</b></th>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-  </tr>
-  <tr>
-    <th style="border: 1px solid #ddd; padding: 8px;"><b>行3</b></th>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-    <td style="border: 1px solid #ddd; padding: 8px;"><select><option value="A" selected>A</option><option value="B">B</option><option value="C">C</option></select></td>
-  </tr>
-</table>
+![img02.png](https://github.com/2f0833e717/markdown-dropdown/raw/master/docs/img/img02.png)
 
 ## ツールの概要
-Markdown Dropdown Generatorは、以下の特徴を持つWebツールです：
+Markdown Dropdown Generatorは、以下の特徴を持つWebツール：
 
 ### 主な機能
 - 行数・列数を自由に設定可能なテーブル生成
